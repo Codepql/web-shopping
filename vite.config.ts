@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig(({ command, isPreview }) => ({
   plugins: [react()],
-  base: command === "build" || isPreview ? "/shopping/" : "/",
+  base: command === "build" || isPreview ? "/web-shopping/" : "/",
 }));

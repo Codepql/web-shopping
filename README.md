@@ -2,7 +2,7 @@
 
 面向桌面与居家生活场景的 React 商品选购演示。按本次确认的要求，首版使用中文界面和人民币价格。
 
-预期部署地址：<https://codepql.github.io/shopping/>。是否已上线以实际部署结果为准。
+预期部署地址：<https://codepql.github.io/web-shopping/>。是否已上线以实际部署结果为准。
 
 ## 本地启动
 
@@ -21,7 +21,7 @@ npm run build
 npm run preview
 ```
 
-生产预览地址默认是 <http://127.0.0.1:4173/shopping/>。Vite 配置对生产构建和生产预览使用 `/shopping/`，开发环境使用 `/`。
+生产预览地址默认是 <http://127.0.0.1:4173/web-shopping/>。Vite 配置对生产构建和生产预览使用 `/web-shopping/`，开发环境使用 `/`。
 
 ## 已实现
 
@@ -65,7 +65,7 @@ tests/
 
 `npm test`：6 项测试通过，覆盖重复加购合并、金额计算、数量边界、删除恢复、异常保存数据、组合筛选和排序。
 
-浏览器端到端验证使用无头 Chromium，覆盖桌面和手机模拟视口的完整选购流程；检查 320、375、390、768、844、1024、1440px 宽度下的横向溢出。已对 `/shopping/` 生产构建运行相同流程。
+浏览器端到端验证使用无头 Chromium，覆盖桌面和手机模拟视口的完整选购流程；检查 320、375、390、768、844、1024、1440px 宽度下的横向溢出。已对 `/web-shopping/` 生产构建运行相同流程。
 
 无障碍自动检查使用 axe-core，对首页、商品详情、购物车、购买提示、手机筛选和手机详情执行 WCAG 2 A/AA 与 2.1 AA 规则检查；已检查页面未发现自动化规则违规。自动化检查不等同于完整无障碍认证或真实设备覆盖。
 
@@ -78,16 +78,16 @@ python -m playwright install chromium
 python tests/e2e.py
 python tests/accessibility.py
 # 或先 npm run build 与 npm run preview，再检查生产路径
-python tests/e2e.py http://127.0.0.1:4173/shopping/
+python tests/e2e.py http://127.0.0.1:4173/web-shopping/
 ```
 
 ## GitHub Pages 部署
 
-1. 将源码推送至公开仓库 `Codepql/shopping` 的 `main` 分支。
+1. 将源码推送至公开仓库 `Codepql/web-shopping` 的 `main` 分支。
 2. 在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
 3. `main` 分支推送会触发工作流，也可在 Actions 手动执行部署。
 4. 工作流依次执行 `npm ci`、`npm test`、`npm run build` 并发布 `dist/`。
-5. 等待工作流成功后，在未登录的浏览器访问 <https://codepql.github.io/shopping/>，检查图片、搜索、详情、加购、刷新和购买提示。
+5. 等待工作流成功后，在未登录的浏览器访问 <https://codepql.github.io/web-shopping/>，检查图片、搜索、详情、加购、刷新和购买提示。
 
 GitHub Actions 使用仓库自动提供的 `GITHUB_TOKEN`，不需要在源码中添加个人访问令牌。若仓库更名或改部署路径，需要修改 `vite.config.ts` 的生产 `base`。
 
