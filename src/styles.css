@@ -793,7 +793,7 @@ svg {
 }
 .quick-add {
   border: 1px solid #d8ddd1;
-  height: 36px;
+  height: 44px;
   padding: 0 10px;
   border-radius: 3px;
   display: inline-flex;
@@ -1179,9 +1179,9 @@ svg {
   line-height: 1.7;
 }
 .remove-item {
-  width: 34px;
-  min-width: 34px;
-  height: 34px;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
   color: var(--muted);
   margin-right: -7px;
 }
@@ -1420,7 +1420,7 @@ svg {
   transform: none;
 }
 .cart-drawer:has(.cart-summary) .toast {
-  bottom: 230px;
+  bottom: 275px;
 }
 .detail-dialog .toast {
   top: 13px;
@@ -2209,8 +2209,8 @@ svg {
     height: 44px;
   }
   .cart-item-bottom .quantity button {
-    width: 34px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
   }
   .cart-item-bottom .quantity span {
     width: 22px;

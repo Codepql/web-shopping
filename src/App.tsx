@@ -63,6 +63,7 @@ export default function App() {
   const cartOpener = useRef<HTMLElement | null>(null);
   const cartButton = useRef<HTMLButtonElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const filterButton = useRef<HTMLButtonElement>(null);
   const products = filterProducts(filters);
   const count = cartCount(cart);
 
@@ -430,6 +431,7 @@ export default function App() {
               </div>
               <button
                 className="mobile-filter-button"
+                ref={filterButton}
                 aria-label="打开筛选与排序"
                 onClick={() => setFilterOpen(true)}
               >
@@ -579,7 +581,13 @@ export default function App() {
       <Dialog.Root open={filterOpen} onOpenChange={setFilterOpen}>
         <Dialog.Portal>
           <Dialog.Overlay className="modal-overlay" />
-          <Dialog.Content className="filter-dialog">
+          <Dialog.Content
+            className="filter-dialog"
+            onCloseAutoFocus={(event) => {
+              event.preventDefault();
+              filterButton.current?.focus();
+            }}
+          >
             <header>
               <Dialog.Title>筛选与排序</Dialog.Title>
               <Dialog.Close className="icon-button" aria-label="关闭筛选">
